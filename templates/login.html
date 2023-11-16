@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Secure Storage - Login</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Secure Storage Logo">
+                <span class="system-name">SECURE STORAGE</span>
+            </div>
+        </nav>
+
+        <main>
+            <div class="center">
+                <form id="login-form" class="fade-in" method="post"
+                    action="{{ url_for('getuname') }}">
+                    <div class="input-container">
+                        <input type="text" id="username" name="username"
+                            class="input-field large-input"
+                            placeholder="Username">
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" id="login-button"
+                            class="button large-button">ENTER</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

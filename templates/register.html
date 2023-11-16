@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register Page</title>
+        <style>
+    /* CSS Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1d2026; /* Dark theme background */
+      color: #ffffff; /* Text color */
+    }
+
+   
+    /* Rest of your existing CSS styles */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Rest of your existing CSS styles */
+
+.register-form {
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #2c303a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center content horizontally */
+    margin-top: 50px;
+}
+
+
+
+
+
+/* Rest of your existing CSS styles */
+
+
+/* Rest of your existing CSS styles */
+
+
+    .register-form h2 {
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc; /* Form label color */
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 300px;
+      padding: 5px;
+      font-size: 16px;
+      background-color: #2c303a; /* Form input background color */
+      color: #ffffff; /* Form input text color */
+      border: 1px solid #555; /* Form input border color */
+      border-radius: 4px;
+    }
+/* Rest of your existing CSS styles */
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black;
+    color: #61EFFF;
+    border: 3px solid #61EFFF;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Raleway";
+    letter-spacing: 4px;
+    margin-top: auto; /* Keep the button at the bottom */
+    align-self: center; /* Center the button horizontally */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+.submit-btn:hover {
+    background-color: #61EFFF;
+    color: black;
+    box-shadow: 0 0 80px #61EFFF;
+    /* transform: scale(1.05); */
+}
+
+
+.submit-btn:active {
+    background-color: #61EFFF;
+    color: black;
+    box-shadow: 0 0 40px #61EFFF;
+    transform: scale(-0.05);
+}
+
+
+
+/* Rest of your existing CSS styles */
+
+
+    option{
+      text-align: center;
+  
+    }
+    nav {
+    background-color: #2c303a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    /* border: 10px; */
+
+}
+
+.logo img {
+    border-radius: 15px;
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+
+}
+
+nav .system-name {
+    font-family: Georgia, serif;
+    font-size: 40px;
+
+}
+
+
+
+/* Slow down the fade-in animation */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.color-display {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-left: 10px;
+            border-radius: 50%;
+        }
+#color1 , #color2 , #color3 {
+    width: 200px;
+}
+  </style>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img
+                    src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Secure Storage Logo">
+                <span class="system-name">SECURE STORAGE</span>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="register-form">
+                <h2 style="text-align: center;" class="fade-in">Register</h2>
+                <form method="post" class="fade-in"
+                    action="{{ url_for('add') }}">
+                    <div class="form-group">
+                        <label for="first_name">First Name:</label>
+                        <input type="text" id="first_name" name="first_name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" id="last_name" name="last_name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="repassword">Re-enter Password:</label>
+                        <input type="password" id="repassword"
+                            name="reenter_password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="color1">Color 1:</label>
+                        <select id="color1" name="color1" class="color-dropdown"
+                            required>
+                            <option value>Selects a color</option>
+                            <option value="red" style="background-color: red;">Red</option>
+                            <option value="green"
+                                style="background-color: green;">Green</option>
+                            <option value="blue" style="background-color: blue;">Blue</option>
+                            <option value="yellow"
+                                style="background-color: yellow;">Yellow</option>
+                            <option value="purple"
+                                style="background-color: purple;">Purple</option>
+                            <option value="cyan" style="background-color: cyan;">Cyan</option>
+                            <option value="orange"
+                                style="background-color: orange;">Orange</option>
+                            <!-- Add more color options as needed -->
+                        </select>
+
+                        <div class="color-display"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color2">Color 2:</label>
+                        <select id="color2" name="color2" class="color-dropdown"
+                            required>
+                            <option value>Select a color</option>
+                            <option value="red" style="background-color: red;">Red</option>
+                            <option value="green"
+                                style="background-color: green;">Green</option>
+                            <option value="blue" style="background-color: blue;">Blue</option>
+                            <option value="yellow"
+                                style="background-color: yellow;">Yellow</option>
+                            <option value="purple"
+                                style="background-color: purple;">Purple</option>
+                            <option value="cyan" style="background-color: cyan;">Cyan</option>
+                            <option value="orange"
+                                style="background-color: orange;">Orange</option>
+                            <!-- Add more color options as needed -->
+                        </select>
+
+                        <div class="color-display"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color3">Color 3:</label>
+                        <select id="color3" name="color3" class="color-dropdown"
+                            required>
+                            <option value>Select a color</option>
+                            <option value="red" style="background-color: red;">Red</option>
+                            <option value="green"
+                                style="background-color: green;">Green</option>
+                            <option value="blue" style="background-color: blue;">Blue</option>
+                            <option value="yellow"
+                                style="background-color: yellow;">Yellow</option>
+                            <option value="purple"
+                                style="background-color: purple;">Purple</option>
+                            <option value="cyan" style="background-color: cyan;">Cyan</option>
+                            <option value="orange"
+                                style="background-color: orange;">Orange</option>
+                            <!-- Add more color options as needed -->
+                        </select>
+
+                        <div class="color-display"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const colorDropdowns = document.querySelectorAll(".color-dropdown");
+                const colorDisplays = document.querySelectorAll(".color-display");
+        
+                colorDropdowns.forEach((dropdown, index) => {
+                    dropdown.addEventListener("input", function () {
+                        const selectedColor = dropdown.value;
+                        colorDisplays[index].style.backgroundColor = selectedColor;
+                    });
+                });
+            });
+        </script>
+
+    </body>
+</html>

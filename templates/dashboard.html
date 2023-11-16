@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #1d2026;
+      padding: 0;
+    }
+
+    nav {
+    background-color: #2c303a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+nav .logo {
+    display: flex;
+
+    align-items: center;
+}
+
+nav .logo img {
+
+    margin-left: 10px;
+    margin-right: 20px;
+    border-radius: 8px;
+    width: 60px;
+}
+
+nav .system-name {
+    font-family: Georgia, serif;
+    color: white;
+    font-size: 40px;
+    margin-right: 25px;
+}
+    .profile-photo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+.main{
+  height: 700px;
+  position: relative;
+  top:20px;
+  width: 900px;
+  /* border: 2px solid black; */
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+    .g1 {
+  transition: transform 0.5s;
+  display: flex;
+  background-size: cover; /* Add this property to scale the background image to cover the container */
+  background-repeat: no-repeat;
+  justify-content: center;
+    align-items: center;
+  height: 100%; /* Ensure the background image takes the full height of the container */
+}
+
+.grid-box {
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  /* background-color: #2c303a; */
+  margin: 20px;
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+    .g1:hover{
+      transform: scale(80%);
+    }
+    .grid-box:hover {
+      background-color: transparent;
+    }
+
+    #grid-box-2{
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #grid-box-3 .g1 img{ 
+          height: 263px;
+    width: auto;
+      margin: 10px auto 10px 38px;
+    }
+    #grid-box-2 .g1 img{ 
+    
+      
+    height: 263px;
+    width: auto;
+    }
+
+
+    .one{
+      justify-content: space-around;
+    }
+
+    .two{
+      justify-content: space-around;
+    }
+
+    #grid-box-4 .g1 img{ 
+
+      height: 280px; width: auto;     
+      margin: 10px auto 10px 10px;
+    }
+
+    .chooes{
+      width: 200px;
+      height: 40px;
+      margin: 20px auto 40px auto;
+      border-radius: 5px;
+      display: flex;
+      background-color: cyan;
+      color: white;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+    display: flex;
+    padding: 10px 45px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: white;
+    background: #808080;
+    transition: 1s;
+    box-shadow: 6px 6px 15px white;
+    transform: skewX(-15deg);
+}
+
+.cta:focus {
+   outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0px #00ffff;
+
+}
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+  span {
+    transform: skewX(15deg) 
+  }
+
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+/**************SVG****************/
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+
+.abs{
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  background-color: red;
+  left: 220px;
+  border-radius: 10px;
+  top: 177px;
+  display: none;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #00ffff;
+    }
+    100% {
+        fill: white;
+    }
+}
+
+
+nav .system-name {
+    font-family: Georgia, serif;}
+#sel_file{
+  display: none;
+    justify-content: center;
+    margin-top: 100px;
+    color: white;
+    padding: 10px 30px;
+    border: 2px solid #00e5ff;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    border-radius: 10px;
+    background: #292929;
+    box-shadow: 0 0 30px white;
+    font-family: cursive;
+}
+
+#sel_file2{
+  display: none;
+    justify-content: center;
+    margin-top: 90px;
+    color: white;
+    padding: 10px 30px;
+    border: 2px solid #00e5ff;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    border-radius: 10px;
+    background: #292929;
+    box-shadow: 0 0 30px white;
+    font-family: cursive;
+}
+
+.upload__button{
+  height: 50px;
+    width: 100px;
+    position: absolute;
+    background-color: #2ac92f;
+    bottom: 30px;
+    left: 387px;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+#copy-button{    
+  display: inline-block;
+    position: absolute;
+    right: 49%;
+    background: green;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid white;
+    width: 70px;
+}
+  </style>
+  </head>
+  <body>
+
+    <nav>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}"
+          alt="Secure Storage Logo">
+
+        <p class="system-name">SECURE STORAGE</p>
+      </div>
+    </nav>
+
+    <div class="abs"> </div>
+
+    <div class="main">
+
+      <div class="one" style="display: flex;">
+
+        <div class="grid-box" id="grid-box-1">
+
+          <div class="g1" id="grid-box-1">
+            <img src="{{ url_for('static', filename='img/img.svg') }}" alt="img">
+          </div>
+        </div>
+
+        <div class="grid-box" id="grid-box-2">
+          <div class="g1">
+            <img src="{{ url_for('static', filename='img/video.svg') }}"
+              alt="img">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="chooes">
+        <div class="wrapper">
+          <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" id="file-upload" name="uploaded-file"
+              accept=".pdf, .doc, .docx, .txt , .png, .jpg , .mp3 , .mp4, .wav, .ogg, .mkv , .avi, .jpeg , .gif "
+              style="display: none;">
+            <a class="cta" href="#" id="custom-file-upload">
+              <span>chooes file</span>
+              <span>
+                <svg width="66px" height="43px" viewBox="0 0 66 43"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="arrow" stroke="none" stroke-width="1" fill="none"
+                    fill-rule="evenodd">
+                    <path class="one"
+                      d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                      fill="#FFFFFF"></path>
+                    <path class="two"
+                      d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                      fill="#FFFFFF"></path>
+                    <path class="three"
+                      d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                      fill="#FFFFFF"></path>
+                  </g>
+                </svg>
+              </span>
+            </a>
+            <input type="submit" value="Upload" class="upload__button"
+              style='display:none'>
+          </form>
+        </div>
+      </div>
+
+      <div class="two" style="display: flex;">
+
+        <div class="grid-box" id="grid-box-3">
+          <div class="g1">
+            <img src="{{ url_for('static', filename='img/file.svg') }}"
+              alt="img">
+          </div>
+        </div>
+
+        <div class="grid-box" id="grid-box-4">
+          <div class="g1">
+            <img src="{{ url_for('static', filename='img/music.svg') }}"
+              alt="img">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <p id="sel_file"></p>
+
+    <p id="sel_file2"></p>
+    <button id="copy-button" style="display: none; "> Copy </button>
+
+  </body>
+  <!-- JavaScript code to redirect to the Flask API route -->
+  <script>
+
+document.getElementById('file-upload').addEventListener('change', function() {
+  var fileName = this.files[0].name;
+  document.getElementById('sel_file').innerHTML = `${fileName}`;
+  document.getElementById('sel_file').style.display = 'flex';
+
+  // Show the "Upload" button
+  document.querySelector('.upload__button').style.display = 'block';
+});
+
+  function redirectToApi(apiUrl) 
+  {
+      // Use window.location.href to change the current URL
+      window.location.href = apiUrl;
+  }
+
+  function dis(){
+    ele1 = document.getElementById('grid-box-1')
+    ele = document.getElementsByClassName('abs')
+
+  }
+
+  document.getElementById('custom-file-upload').addEventListener('click', function() {
+    document.getElementById('file-upload').click();
+});
+
+document.getElementById('file-upload').addEventListener('change', function() {
+    var fileName = this.files[0].name;
+    document.getElementById('sel_file').innerHTML = `${fileName}`
+    document.getElementById('sel_file').style.display = 'flex'
+
+    // You can replace the alert with any other action you want to perform with the selected file.
+});
+
+
+sec1IMG = document.getElementById('grid-box-1')
+sec2VID = document.getElementById('grid-box-2')
+sec3DOC = document.getElementById('grid-box-3')
+sec4AUD = document.getElementById('grid-box-4')
+
+sec1IMG.addEventListener('click', () => { 
+  window.location.href = "{{ url_for('imgFolder') }}";
+})
+
+sec2VID.addEventListener('click', () => { 
+  window.location.href = "{{ url_for('vidFolder') }}";
+})
+
+sec3DOC.addEventListener('click', () => { 
+  window.location.href = "{{ url_for('docFolder') }}";
+})
+
+sec4AUD.addEventListener('click', () => { 
+  window.location.href = "{{ url_for('audFolder') }}";
+})
+
+
+function copyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+  }
+
+  function showCopyButton() {
+    document.getElementById('copy-button').style.display = 'inline-block';
+  }
+
+document.getElementById('copy-button').addEventListener('click', function () {
+    const textToCopy = `${file_name_is} ---> key1 : ${keyy2} and key2: ${keyy1}`;
+    copyToClipboard(textToCopy);
+
+    // Change the button text to "Copied" after copying
+    this.innerText = 'Copied';
+  });
+
+
+
+var file_name_is = "{{ file_is }}"
+    var keyy1 = " {{ keyy1 }}"
+    var keyy2 = " {{ keyy2 }}"
+    var redirection = " {{ redirection }}"
+
+    if (redirection == 1) {
+
+      // document.getElementById('sel_file').innerHTML = `${file_name_is} Uploaded`;
+    document.getElementById('sel_file2').innerHTML = `${file_name_is} ---> key1 : ${keyy2} and key2: ${keyy1}`;
+    document.getElementById('sel_file2').style.display = 'flex';
+    showCopyButton();
+
+    
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>_FOLDER</title>
+        <!-- <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}"> -->
+        <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #1d2026;
+      padding: 0;
+    }
+
+    nav {
+    background-color: #2c303a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+nav .logo {
+    display: flex;
+
+    align-items: center;
+}
+
+nav .logo img {
+
+    margin-left: 10px;
+    margin-right: 20px;
+    border-radius: 8px;
+    width: 60px;
+}
+
+nav .system-name {
+    font-family: Georgia, serif;
+    color: white;
+    font-size: 40px;
+    margin-right: 25px;
+}
+    .profile-photo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+    
+
+</style>
+
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Secure Storage Logo">
+
+                <p class="system-name">SECURE STORAGE</p>
+            </div>
+        </nav>
+
+    </body>
+
+</html>

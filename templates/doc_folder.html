@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Audiowide">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style_folder.css') }} ">
+
+    <style>
+/* styles.css */
+
+.file_box{
+    height: 200px; 
+    
+    background-image: url("{{ url_for('static', filename='img/doc_file.svg') }}");
+    background-size: contain;
+    background-repeat: no-repeat;
+background-position: center;
+}
+
+</style>
+
+    <head>
+        <title>DOC_FOLDER</title>
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div id="header">
+            <h1>DOCUMENT FOLDER</h1>
+        </div>
+
+        <div class="contain">
+            <ul>
+                {% for file in doc_files %}
+                <li>
+                    <a onclick="showKeyInput('{{ file }}')">
+                        <div class="fname">
+                            {{ file }}
+                        </div>
+                        <div class="file_box">
+
+                        </div>
+                        <div class="lnk">
+
+                        </div>
+                    </a>
+
+                    <div class="modal" id="key-input-{{ file }}"
+                        style="display: none;">
+                        <form
+                            id="key-form-{{ file }}"
+                            action="{{ url_for('downloadDOC', file_name=file) }}"
+                            method="GET">
+                            <div class="k1">
+
+                                <label for="key1" class="form_key">Key 1</label>
+                                <input type="text" id="key1" name="key1"
+                                    class="form_key_lb">
+                            </div>
+                            <br>
+                            <div class="k2">
+
+                                <label for="key2" class="form_key">Key 2</label>
+                                <input type="text" id="key2" name="key2"
+                                    class="form_key_lb">
+                            </div>
+                            <br>
+                            <button type="submit" class="sbmt"
+                                onclick="hideKeyInput('{{ file }}')">Submit</button>
+                        </form>
+
+                        <button type="button" class="bk_btn"
+                            onclick="goBack('{{ file }}')">Back</button>
+                    </div>
+
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+
+    <script src="{{ url_for('static', filename='js/main_folder.js') }}">
+    </script>
+</html>

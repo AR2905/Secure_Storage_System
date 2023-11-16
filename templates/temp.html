@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Secure Storage - Login</title>
+
+        <style>
+        /* Your main page CSS styles */
+
+        /* ... */
+
+        /* Add the background code here */
+        /* ============================= */
+        /* Background CSS code */
+
+        nav {
+    background-color: #2c303a;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    height: 70px;
+}
+
+nav .logo {
+    display: flex;
+
+    align-items: center;
+}
+
+nav .logo img {
+    margin-right: 10px;
+    width: 60px;
+}
+
+nav .system-name {
+    font-family: Georgia, serif;
+    font-size: 40px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 56px);
+}
+
+.main-logo {
+    border-radius: 20px;
+    height: 300px;
+
+    margin-bottom: 20px;
+    animation: ring2 0.75s;
+}
+
+.button.large-button {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    min-width: 300px;
+    min-height: 60px;
+    font-family: "Raleway";
+    font-size: 30px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 20px;
+    /* box-shadow: 12px 12px 24px rgba(79, 209, 197, .64); */
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.loc {
+    text-align: center;
+}
+
+a::before {
+    content: '';
+    border-radius: 20px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #00FFCB;
+    /* box-shadow: 0 0 60px rgba(0, 255, 203, .64); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+.button:hover,
+.button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+a:hover::before,
+a:focus::before {
+    opacity: 1;
+}
+
+a::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00FFCB;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+a:hover::after,
+a:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+@keyframes ring2 {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+    }
+}
+        .button.large-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Slow down the fade-in animation */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: #1d2026;
+            background-size: 100%;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .container-fluid {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background: #FFF;
+            position: relative;
+        }
+
+        .background {
+            background-color: #1d2026;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0px;
+            z-index: -1;
+        }
+
+        .cube {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: solid 1px #D7D4E4;
+            transform-origin: top left;
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            animation: cube 12s ease-in forwards infinite;
+        }
+
+        .cube:nth-child(2n) {
+            border-color: #FFF;
+        }
+
+        .cube:nth-child(2) {
+            animation-delay: 2s;
+            left: 25vw;
+            top: 40vh;
+        }
+
+        .cube:nth-child(3) {
+            animation-delay: 4s;
+            left: 75vw;
+            top: 50vh;
+        }
+
+        .cube:nth-child(4) {
+            animation-delay: 6s;
+            left: 90vw;
+            top: 10vh;
+        }
+
+        .cube:nth-child(5) {
+            animation-delay: 8s;
+            left: 10vw;
+            top: 85vh;
+        }
+
+        .cube:nth-child(6) {
+            animation-delay: 10s;
+            left: 50vw;
+            top: 10vh;
+        }
+
+        @keyframes cube {
+            from {
+                transform: scale(0) rotate(0deg) translate(-50%, -50%);
+                opacity: 1;
+            }
+
+            to {
+                transform: scale(20) rotate(960deg) translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+
+        /* ... */
+        /* ============================= */
+    </style>
+    </head>
+    <body>
+        <nav>
+            <!-- Your navigation content here -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Secure Storage Logo">
+                <span class="system-name">SECURE STORAGE</span>
+            </div>
+        </nav>
+
+        <main>
+            <div class="center">
+                <!-- Your main content here -->
+
+                <img class="main-logo"
+                    src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Main Logo">
+
+                <div class="buttons">
+                    <div class="wrap">
+                        <a href="{{ url_for('login1') }}"
+                            class="button large-button"><div class="loc">LOGIN</div></a>
+                    </div>
+                    <div class="wrap">
+                        <a href="{{ url_for('register') }}"
+                            class="button large-button"><div class="loc">REGISTER</div></a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Background animation -->
+        <div class="container-fluid">
+            <div class="background">
+                <div class="cube"></div>
+                <div class="cube"></div>
+                <div class="cube"></div>
+                <div class="cube"></div>
+                <div class="cube"></div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Secure Storage - Index 2</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/login3.css') }}">
+
+    </head>
+    <body>
+        <nav>
+
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Secure Storage Logo">
+                <span class="system-name">SECURE STORAGE</span>
+            </div>
+        </nav>
+
+        <main>
+            <div class="center">
+                <form id="login-form" class="fade-in" method="post"
+                    action="{{ url_for('getcolor') }}">
+
+                    <div class="color-option">
+                        <select id="color-dropdown-1" name="color1"
+                            class="dropdown">
+                            <option value>Selects a color</option>
+                            <option value="red" style="background-color: red;">Red</option>
+                            <option value="green"
+                                style="background-color: green;">Green</option>
+                            <option value="blue" style="background-color: blue;">Blue</option>
+                            <option value="yellow"
+                                style="background-color: yellow;">Yellow</option>
+                            <option value="purple"
+                                style="background-color: purple;">Purple</option>
+                            <option value="cyan" style="background-color: cyan;">Cyan</option>
+                            <option value="orange"
+                                style="background-color: orange;">Orange</option>
+
+                            <!-- Add more color options as needed -->
+                        </select>
+                        <div class="color-display" id="color-display-1"></div>
+                    </div>
+
+                    <div class="color-option">
+                        <select id="color-dropdown-2" name="color2"
+                            class="dropdown">
+                            <option value>Selects a color</option>
+                            <option value="red" style="background-color: red;">Red</option>
+                            <option value="green"
+                                style="background-color: green;">Green</option>
+                            <option value="blue" style="background-color: blue;">Blue</option>
+                            <option value="yellow"
+                                style="background-color: yellow;">Yellow</option>
+                            <option value="purple"
+                                style="background-color: purple;">Purple</option>
+                            <option value="cyan" style="background-color: cyan;">Cyan</option>
+                            <option value="orange"
+                                style="background-color: orange;">Orange</option>
+                            <!-- Add more color options as needed -->
+                        </select>
+                        <div class="color-display" id="color-display-2"></div>
+                    </div>
+
+                    <div class="color-option">
+                        <select id="color-dropdown-3" name="color3"
+                            class="dropdown">
+                            <option value>Select
+                                a color</option>
+                            <option value="red" style="background-color: red;">Red</option>
+                            <option value="green"
+                                style="background-color: green;">Green</option>
+                            <option value="blue" style="background-color: blue;">Blue</option>
+                            <option value="yellow"
+                                style="background-color: yellow;">Yellow</option>
+                            <option value="purple"
+                                style="background-color: purple;">Purple</option>
+                            <option value="cyan" style="background-color: cyan;">Cyan</option>
+                            <option value="orange"
+                                style="background-color: orange;">Orange</option>
+                            <!-- Add more color options as needed -->
+                        </select>
+                        <div class="color-display" id="color-display-3"></div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit" id="color-button"
+                            class="button large-button">ENTER</button>
+                    </div>
+
+                </form>
+                <div class="greeting">Enter Color-Code</div>
+                <div class="stage-indicator">Stage-2</div>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+    $(document).ready(function() {
+        $('.dropdown').on('change', function() {
+            var selectedColor = $(this).find(':selected').css('background-color');
+            var displayId = $(this).attr('id').replace('color-dropdown', 'color-display');
+            $('#' + displayId).css('background-color', selectedColor);
+        });
+    });
+</script>
+
+    </body>
+</html>

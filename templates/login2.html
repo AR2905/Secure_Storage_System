@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Secure Storage - Index 2</title>
+        <link rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <nav>
+
+            <!-- Navigation bar content -->
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Secure Storage Logo">
+                <span class="system-name">SECURE STORAGE</span>
+            </div>
+        </nav>
+
+        <main>
+            <div class="center">
+                <form id="login-form" class="fade-in" method="post"
+                    action="{{ url_for('getpassword') }}">
+                    <!-- ... (your existing HTML code) ... -->
+                    <div class="input-container">
+                        <input type="password" id="password" name="password"
+                            class="input-field large-input"
+                            placeholder="Password">
+                        <!-- <button id="show-hide-button" class="show-hide-button">Show</button> -->
+                    </div>
+
+                    <!-- ... (rest of your HTML code) ... -->
+
+                    <div class="button-container">
+                        <button type="submit" id="next-button"
+                            class="button large-button">NEXT</button>
+                    </div>
+
+                </form>
+                <div class="greeting">Hello! {{ username }}</div>
+                <div class="stage-indicator">Stage-1</div>
+            </div>
+        </main>
+    </body>
+
+</html>
