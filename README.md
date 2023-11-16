@@ -5,7 +5,7 @@ This Git project focuses on developing a robust and secure file storage system w
 
 **Key Features:**
 
-Multi-layer Encryption:
+--> Multi-layer Encryption:
 
 Utilizes advanced encryption algorithms such as AES (Advanced Encryption Standard) and 3DES (Triple Data Encryption Standard) to safeguard the stored files.
 Implements a multi-layer encryption approach to enhance the security of sensitive data.
@@ -20,7 +20,9 @@ If the correct key is provided, the system grants access to the unencrypted file
 Supported File Types:
 
 Accommodates various file formats, including images, videos, audio, and PDF documents, ensuring versatility in file storage.
-Two-factor Authentication:
+
+
+--> Two-factor Authentication:
 
 Implements a two-layer authentication system:
 Layer 1: Users authenticate with a traditional text password.
