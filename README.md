@@ -49,7 +49,15 @@ Users can clone this Git repository to access the source code and contribute to 
 
 
    
-![Screenshot 2023-11-16 122312](https://github.com/AR2905/Secure_Storage_System/assets/125748114/1b4defd1-812a-44b4-a186-6543843463fa)
+![Home](https://github.com/AR2905/Secure_Storage_System/assets/125748114/1b4defd1-812a-44b4-a186-6543843463fa)
+
+![Register](https://github.com/AR2905/Secure_Storage_System/assets/125748114/b7a74c70-7e85-4938-a20a-96722d01608d)
+
+![Login-1](https://github.com/AR2905/Secure_Storage_System/assets/125748114/d65a2911-1dc1-42e4-b142-5173ea4354f2)
+
+![Login-Layer1](https://github.com/AR2905/Secure_Storage_System/assets/125748114/64e12cd0-7f94-4f62-aa4b-9ead3224c79b)
+
+![Login-Layer2](https://github.com/AR2905/Secure_Storage_System/assets/125748114/f85a5425-0594-4d76-8fa4-065c17edc3e5)
 
 
-![Screenshot 2023-11-16 122654](https://github.com/AR2905/Secure_Storage_System/assets/125748114/464ab612-2546-45d0-af14-b43e9a77b73f)
+![Dashboard](https://github.com/AR2905/Secure_Storage_System/assets/125748114/464ab612-2546-45d0-af14-b43e9a77b73f)
