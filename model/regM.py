@@ -1,38 +1,48 @@
-from flask import render_template
-
 from flask import Flask, render_template, request, redirect, url_for, session
 import firebase_admin
+from firebase_admin import credentials, firestore, storage, initialize_app
 from google.cloud import storage as sss
 from datetime import timedelta
 from firebase_admin import credentials, firestore, storage
 import os
-
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
 class regM:
     def __init__(self):
         try:
-            
-            self.cred = credentials.Certificate("C:\\Users\\ASHISH\\Downloads\\JSON\\sec.json")
-            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\ASHISH\\Downloads\\JSON\\sec.json"
+            # Gather all credentials from environment variables
+            cred_info = {
+                "type": os.getenv("GOOGLE_TYPE"),
+                "project_id": os.getenv("GOOGLE_PROJECT_ID"),
+                "private_key_id": os.getenv("GOOGLE_PRIVATE_KEY_ID"),
+                "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace('\\n', '\n'),
+                "client_email": os.getenv("GOOGLE_CLIENT_EMAIL"),
+                "client_id": os.getenv("GOOGLE_CLIENT_ID"),
+                "auth_uri": os.getenv("GOOGLE_AUTH_URI"),
+                "token_uri": os.getenv("GOOGLE_TOKEN_URI"),
+                "auth_provider_x509_cert_url": os.getenv("GOOGLE_AUTH_PROVIDER_X509_CERT_URL"),
+                "client_x509_cert_url": os.getenv("GOOGLE_CLIENT_X509_CERT_URL"),
+                "universe_domain": os.getenv("GOOGLE_UNIVERSE_DOMAIN")
+            }
 
-            firebase_admin.initialize_app(self.cred, {
-
-            'apiKey': "AIzaSyC-Fwvy4a2r7x3MqQ5Q_hugdsuKP6c8VBI",
-            'authDomain': "practice-17d52.firebaseapp.com",
-            'projectId': "practice-17d52",
-            'storageBucket': "practice-17d52.appspot.com",
-            'messagingSenderId': "880102883623",
-            'appId': "1:880102883623:web:c199c29978eb511816a902",
-            'measurementId': "G-PV1J5SXGKJ"
-            })
+            # Initialize Firebase Admin SDK
+            if not firebase_admin._apps:
+                initialize_app(credentials.Certificate(cred_info), {
+                    'apiKey': os.getenv("FIREBASE_API_KEY"),
+                    'authDomain': os.getenv("FIREBASE_AUTH_DOMAIN"),
+                    'projectId': os.getenv("FIREBASE_PROJECT_ID"),
+                    'storageBucket': os.getenv("FIREBASE_STORAGE_BUCKET"),
+                    'messagingSenderId': os.getenv("FIREBASE_MESSAGING_SENDER_ID"),
+                    'appId': os.getenv("FIREBASE_APP_ID"),
+                    'measurementId': os.getenv("FIREBASE_MEASUREMENT_ID")
+                })
 
             self.db = firestore.client()
             self.bucket = storage.bucket()
 
             print("OK_reg")
-        
-        except:
-            print("ERROR_reg")
-
+        except Exception as e:
+            print(f"Error initializing regM: {e}")
         
     def add_data_model(self, data):
         try:

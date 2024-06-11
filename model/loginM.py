@@ -35,7 +35,6 @@ class loginM:
         try:
             self.db = firestore.client()
             self.bucket = storage.bucket()
-            # self.client = storage.Client()
             print("OK_log")
         except:
             print("ERROR_log")
