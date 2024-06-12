@@ -12,29 +12,29 @@ class regM:
         try:
             # Gather all credentials from environment variables
             cred_info = {
-                "type": os.getenv("GOOGLE_TYPE"),
-                "project_id": os.getenv("GOOGLE_PROJECT_ID"),
+                "type": 'service_account',
+                "project_id": 'practice-17d52',
                 "private_key_id": os.getenv("GOOGLE_PRIVATE_KEY_ID"),
                 "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace('\\n', '\n'),
-                "client_email": os.getenv("GOOGLE_CLIENT_EMAIL"),
-                "client_id": os.getenv("GOOGLE_CLIENT_ID"),
-                "auth_uri": os.getenv("GOOGLE_AUTH_URI"),
-                "token_uri": os.getenv("GOOGLE_TOKEN_URI"),
-                "auth_provider_x509_cert_url": os.getenv("GOOGLE_AUTH_PROVIDER_X509_CERT_URL"),
-                "client_x509_cert_url": os.getenv("GOOGLE_CLIENT_X509_CERT_URL"),
-                "universe_domain": os.getenv("GOOGLE_UNIVERSE_DOMAIN")
+                "client_email": 'firebase-adminsdk-dz44g@practice-17d52.iam.gserviceaccount.com',
+                "client_id": '102784792120044523860'),
+                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+                "token_uri": "https://oauth2.googleapis.com/token",
+                "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+                "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dz44g%40practice-17d52.iam.gserviceaccount.com",
+                "universe_domain": "googleapis.com"
             }
 
             # Initialize Firebase Admin SDK
             if not firebase_admin._apps:
                 initialize_app(credentials.Certificate(cred_info), {
                     'apiKey': os.getenv("FIREBASE_API_KEY"),
-                    'authDomain': os.getenv("FIREBASE_AUTH_DOMAIN"),
-                    'projectId': os.getenv("FIREBASE_PROJECT_ID"),
-                    'storageBucket': os.getenv("FIREBASE_STORAGE_BUCKET"),
-                    'messagingSenderId': os.getenv("FIREBASE_MESSAGING_SENDER_ID"),
-                    'appId': os.getenv("FIREBASE_APP_ID"),
-                    'measurementId': os.getenv("FIREBASE_MEASUREMENT_ID")
+                    'authDomain': "practice-17d52.firebaseapp.com",
+                    'projectId': "practice-17d52",
+                    'storageBucket': "practice-17d52.appspot.com",
+                    'messagingSenderId': "880102883623",
+                    'appId':"1:880102883623:web:c199c29978eb511816a902",
+                    'measurementId': "G-PV1J5SXGKJ"
                 })
 
             self.db = firestore.client()
