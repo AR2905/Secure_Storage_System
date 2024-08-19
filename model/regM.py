@@ -12,30 +12,16 @@ class regM:
         try:
             # Gather all credentials from environment variables
             cred_info = {
-                "type": 'service_account',
-                "project_id": 'practice-17d52',
-                "private_key_id": os.getenv("GOOGLE_PRIVATE_KEY_ID"),
-                "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace('\\n', '\n'),
-                "client_email": 'firebase-adminsdk-dz44g@practice-17d52.iam.gserviceaccount.com',
-                "client_id": '102784792120044523860'),
-                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-                "token_uri": "https://oauth2.googleapis.com/token",
-                "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-                "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dz44g%40practice-17d52.iam.gserviceaccount.com",
-                "universe_domain": "googleapis.com"
+"apiKey":"AIzaSyC-Fwvy4a2r7x3MqQ5Q_hugdsuKP6c8VBI",
+  "authDomain": "practice-17d52.firebaseapp.com",
+  "projectId": "practice-17d52",
+  "storageBucket": "practice-17d52.appspot.com",
+  "messagingSenderId": "880102883623",
+  "appId": "1:880102883623:web:c199c29978eb511816a902",
+  "measurementId": "G-PV1J5SXGKJ"
             }
 
-            # Initialize Firebase Admin SDK
-            if not firebase_admin._apps:
-                initialize_app(credentials.Certificate(cred_info), {
-                    'apiKey': os.getenv("FIREBASE_API_KEY"),
-                    'authDomain': "practice-17d52.firebaseapp.com",
-                    'projectId': "practice-17d52",
-                    'storageBucket': "practice-17d52.appspot.com",
-                    'messagingSenderId': "880102883623",
-                    'appId':"1:880102883623:web:c199c29978eb511816a902",
-                    'measurementId': "G-PV1J5SXGKJ"
-                })
+
 
             self.db = firestore.client()
             self.bucket = storage.bucket()
