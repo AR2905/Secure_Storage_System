@@ -30,7 +30,6 @@ from model.cgraphy.dec_word_SIMPLE import WordFileDecryptor
 
 
 class loginM:
-    
     def __init__(self):
         try:
             self.db = firestore.client()
@@ -294,28 +293,34 @@ class loginM:
 
 
     def sync_files_with_storage_img(self, folder_name):
-        
-        storage_client = sss.Client()
+        # Initialize the storage client with credentials from environment variable
+        service_account_info = {
+            "type": "service_account",
+            "project_id": "practice-17d52",
+            "private_key_id": "a2ddd2b73712b7893d3d0482d9dce7a3d3823040",
+            "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkOs7jFNkvZlsB\nvJnsERGE84xxEw0mBKJ3n1fCg0gL+Osk10cqC538bC7Q7bo+0nOtJfbELXHW3pYR\n+4uPN/oGU0DkpiIxZ3+a9eo53z0eykc5simb+SXky7UuH5xVGpLXbAs9oT4HqAUL\njh9Xg4OT/qwpCWHwZnhpdvIqZpd/NZX4re57q/9rfU/5c2rXVXXOkp6Ci9FnmjaU\nS3e7xd6X9MppzmN6Q9P/qDSIlf7wzavFmsR9bpY/8C0EbtOneH5AwvVwDPGceAJY\n+tid9I1y1OmotUGzgcAhC/Q6PrTFnfRN9kqEH0ne8Tq0v0E1kO1m6YF4mNKywBYy\nTvEo0wKBAgMBAAECggEACBEgCL0rrOPrD1/UMxykhTWqxDW46ESDT+Gd35iJiuMB\n3XtAmN/D6Lpn2bKvrdz/BxyHOkKQ/32xlk9wxVegNAk8KQin3QOvm8akDnTF4KcN\ndOSCN2t3av1ky4+/ovOG9OA7zh3UBiLAurBTH34x62yJSHIlFpHZLM8Fqd0EgiBL\nhCvIjUOBkH1cak1TqQcEE/R4SiDgjGSxdRnbk7erKua7DK7sHykyJ9DOWnEg73qg\nXqRA+7pQwJly7yAx/FBjzPwOx7jGIfyL7DeLi8HelkIdY2GJ+8N7AgpQ4c6xnonD\n7nYYWgHQz3RcUBJY/OwGarPcMBt25ZsFgEbgJ0NoBQKBgQDh+d5DoLeFDrOjzT3B\nDTsDIoHIZqm1kfaEIKkN7iuUqZaQqPYK1uebIAcHD4aExO/YAbkJpKoj9AMB5QzQ\n/xFg/TsEbOXadcGhjxh13LwvOJo2RPfs+59wQdTgiHQe2YismYdo2mCLk3/GH/fW\nh3QPJIdUWr1GPDLFXLgJkBkcNQKBgQC6DMJ/E9eIb0BSdeSv1T0ThyCC0MV6WOgU\nbQROI4BA+J1pUczFZ5GS1ZKmqvOKzqO0AXqwQnN18QvTiGRgFP2tFczN3kbsbxvb\nqQP92rnv6M/4w0YQQoBaPX88PfJQUfZxbM28n+H6pNizPVdl934aa8slE0rq+dQ0\n/TXRunSenQKBgACsIKgs2z7vG0O6gZuIcYuB18cD3y9mHsin3DjpY4HOu1700b6Y\ngxnoD31K44iTmW8YGjfYIJV4zWV9C/u3NpMGTd2mgUyUGx5i8ZywKnMthO/yZpZy\n7TeFSp/caBQLa6ev0UJTnAPuTWwGflNKFeNRpYFvv65s0W3a58VHg3udAoGAJClK\nvGxc3hXRiLWFZ2+o2VzQQtzVJTyWjzHJPm7EBNzNq6TMiinhL4r3YBGmGHqlct0+\nvXeM/YWGaOz/pXUvAS9ViUYEvvuxjHZDYlna/fhgQ9egjJSAYgnF6y2XJWlo3w7o\nxhrFT3Qu8lef3x/FkNkWuPQRAa7hQhNdHJCDDjkCgYEA2haAhfqoD+Ri8YMVs7fP\nogaFjb0zawRpZiWQk73K0DnJapjdg5lcXG4T3va1bocivioqbIhkYirMdwu6eVgh\nJPvkwm5W9ghmVyRms5G6wg0iuX1nQRDp2t0KF2ZiYN7/EUIe5onCr0a1irWin5ZT\nbeOIghPVXoRkaXJRdaxuheM=\n-----END PRIVATE KEY-----\n",
+            "client_email": "firebase-adminsdk-71old@practice-17d52.iam.gserviceaccount.com",
+            "client_id": "107184044495231452010",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-71old%40practice-17d52.iam.gserviceaccount.com",
+            "universe_domain": "googleapis.com"
+        }
+        storage_client = sss.Client.from_service_account_info(service_account_info)
         bucket = storage_client.bucket("practice-17d52.appspot.com")
         
-        # Specify the folder name within the user's directory (e.g., 'image')
-        # folder_name = 'image'
-        
-        # List blobs with the specified folder prefix
+        # Proceed with listing blobs in the specified folder
         existing_files = list(bucket.list_blobs(prefix=f'uploads/{self.user_id_code}/{folder_name}/'))
         
-        # Initialize an empty list to store the filenames
         uploaded_files = []
-        
         for blob in existing_files:
-            # Extract the filename from the blob's name
             filename = os.path.basename(blob.name)
             uploaded_files.append(filename)
             
         uploaded_files = [file for file in uploaded_files if file.strip()]
-        # print(uploaded_files)
         return uploaded_files
-    
+            
     def download_image(self, file_name, key1, key2):
         return self.download_file('image', file_name, key1, key2)
 
