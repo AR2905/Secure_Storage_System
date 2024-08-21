@@ -28,6 +28,9 @@ from model.cgraphy.dec_image import ImageDecryptor
 from model.cgraphy.dec_pdf import PdfDecryptor
 from model.cgraphy.dec_word_SIMPLE import WordFileDecryptor
 
+import logging
+
+logging.basicConfig(filename='app.log', level=logging.ERROR)
 
 class loginM:
     def __init__(self):
@@ -61,15 +64,15 @@ class loginM:
             self.users_ref = self.db.collection('users')
             self.query = self.users_ref.where("username", "==", username)
             results = self.query.stream()
-            for result in results:
-        # If there's at least one result, the username exists
-                return render_template('login2.html', username = username)
-            # If no matching documents were found, the username does not exist
-            return render_template('no_user.html')
-
-        except:
-            return("Something wrong")
-        
+            if any(results):
+                return render_template('login2.html', username=username)
+            else:
+                return render_template('no_user.html')
+      
+        except Exception as e:
+            logging.error(f"An error occurred: {e}", exc_info=True)
+            return render_template('error.html', message="Something went wrong.")
+    
     def password_check(self , password):
         q = self.users_ref.where('username', '==', self.uname).get()
         for doc in q:
